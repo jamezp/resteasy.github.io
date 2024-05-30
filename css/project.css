@@ -2111,5 +2111,12 @@ div.share-page {
 	list-style-type: circle;
 }
 
+table .cve {
+
+}
+.cve td[name="id"] {
+	width: 100px;
+}
+
 
 

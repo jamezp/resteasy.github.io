@@ -1,0 +1,36 @@
+---
+layout: default
+title:      "CVE"
+selflink:   "cve"
+---
+
+<h3>RESTEasy CVE</h3>
+{% for file in site.data.cve %}
+<div>
+    <h2>{{ file[0] | replace:'-','.' }}</h2>
+    <table class="simpletablestyle cve">
+        <thead>
+        <tr class="header">
+            <th>ID</th>
+            <th>Severity</th>
+            <th>Description</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for cve in file[1].dependencies %}
+        {% if cve.vulnerabilities %}
+        {% for vuln in cve.vulnerabilities %}
+        {% capture rowClass %}{% cycle 'oddRow', '' %}{% endcapture %}
+        <tr class="{{ rowClass }}">
+            <td name="id"><a href="https://access.redhat.com/security/cve/{{ vuln.name | downcase }}" target="_blank">{{
+                vuln.name }}</a></td>
+            <td>{{ vuln.severity }}</td>
+            <td>{{ vuln.description }}</td>
+        </tr>
+        {% endfor %}
+        {% endif %}
+        {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endfor %}
