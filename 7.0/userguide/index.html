@@ -529,8 +529,8 @@ table.CodeRay td.code{padding:0 0 0 .75em}
 <div id="header">
 <h1><span class="image"><img src="images/resteasy_logo_200x.png" alt="RESTEasy"></span></h1>
 <div class="details">
-<span id="revnumber">version 7.0.3.Final,</span>
-<span id="revdate">2026-08-03</span>
+<span id="revnumber">version 7.0.4.Final,</span>
+<span id="revdate">2026-09-01</span>
 </div>
 <div id="toc" class="toc2">
 <div id="toctitle">Table of Contents</div>
@@ -742,8 +742,9 @@ table.CodeRay td.code{padding:0 0 0 .75em}
 <li><a href="#_oracle_jdk_http_server">43.2. Oracle JDK HTTP Server</a></li>
 <li><a href="#_netty">43.3. Netty</a></li>
 <li><a href="#_reactor_netty">43.4. Reactor-Netty</a></li>
-<li><a href="#_vert_x">43.5. Vert.x</a></li>
-<li><a href="#_embeddedjaxrsserver">43.6. EmbeddedJaxrsServer</a></li>
+<li><a href="#_jetty">43.5. Jetty</a></li>
+<li><a href="#_vert_x">43.6. Vert.x</a></li>
+<li><a href="#_embeddedjaxrsserver">43.7. EmbeddedJaxrsServer</a></li>
 </ul>
 </li>
 <li><a href="#_resteasy_server_side_mock_framework">44. Server-side Mock Framework</a></li>
@@ -876,7 +877,7 @@ table.CodeRay td.code{padding:0 0 0 .75em}
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-This version, 7.0.3.Final, of RESTEasy supports <a href="https://jakarta.ee/specifications/restful-ws/4.0/jakarta-restful-ws-spec-4.0" target="_blank" rel="noopener">Jakarta RESTful Web Services 4.0</a>.
+This version, 7.0.4.Final, of RESTEasy supports <a href="https://jakarta.ee/specifications/restful-ws/4.0/jakarta-restful-ws-spec-4.0" target="_blank" rel="noopener">Jakarta RESTful Web Services 4.0</a>.
 </td>
 </tr>
 </table>
@@ -1294,17 +1295,17 @@ We strongly suggest that you use Maven to build your WAR files as RESTEasy is sp
 <pre class="CodeRay highlight"><code data-lang="xml"><span class="tag">&lt;dependency&gt;</span>
     <span class="tag">&lt;groupId&gt;</span>org.jboss.resteasy<span class="tag">&lt;/groupId&gt;</span>
     <span class="tag">&lt;artifactId&gt;</span>resteasy-core<span class="tag">&lt;/artifactId&gt;</span>
-    <span class="tag">&lt;version&gt;</span>7.0.3.Final<span class="tag">&lt;/version&gt;</span>
+    <span class="tag">&lt;version&gt;</span>7.0.4.Final<span class="tag">&lt;/version&gt;</span>
 <span class="tag">&lt;/dependency&gt;</span>
 <span class="tag">&lt;dependency&gt;</span>
     <span class="tag">&lt;groupId&gt;</span>org.jboss.resteasy<span class="tag">&lt;/groupId&gt;</span>
     <span class="tag">&lt;artifactId&gt;</span>resteasy-client<span class="tag">&lt;/artifactId&gt;</span>
-    <span class="tag">&lt;version&gt;</span>7.0.3.Final<span class="tag">&lt;/version&gt;</span>
+    <span class="tag">&lt;version&gt;</span>7.0.4.Final<span class="tag">&lt;/version&gt;</span>
 <span class="tag">&lt;/dependency&gt;</span>
 <span class="tag">&lt;dependency&gt;</span>
     <span class="tag">&lt;groupId&gt;</span>org.jboss.resteasy<span class="tag">&lt;/groupId&gt;</span>
     <span class="tag">&lt;artifactId&gt;</span>resteasy-jaxb-provider<span class="tag">&lt;/artifactId&gt;</span>
-    <span class="tag">&lt;version&gt;</span>7.0.3.Final<span class="tag">&lt;/version&gt;</span>
+    <span class="tag">&lt;version&gt;</span>7.0.4.Final<span class="tag">&lt;/version&gt;</span>
 <span class="tag">&lt;/dependency&gt;</span></code></pre>
 </div>
 </div>
@@ -1313,7 +1314,7 @@ We strongly suggest that you use Maven to build your WAR files as RESTEasy is sp
 </div>
 <div class="paragraph">
 <p>If not using Maven, include the necessary jars by hand.
-If downloading RESTEasy (from <a href="https://resteasy.dev/downloads.html" class="bare">https://resteasy.dev/downloads.html</a>, for example) you will get a file, resteasy-7.0.3.Final-all.zip.
+If downloading RESTEasy (from <a href="https://resteasy.dev/downloads.html" class="bare">https://resteasy.dev/downloads.html</a>, for example) you will get a file, resteasy-7.0.4.Final-all.zip.
 Unzip the file. The resulting directory will contain a lib/ directory that contains the libraries needed by RESTEasy.
 Copy these, as needed, into your /WEB-INF/lib directory.
 Place your Jakarta RESTful Web Services annotated class resources and providers within one or more jars within /WEB-INF/lib or your raw class files within /WEB-INF/classes.</p>
@@ -1333,7 +1334,7 @@ Add this artifact dependency to your project&#8217;s pom.xml file so the JAR fil
 <pre class="CodeRay highlight"><code data-lang="xml"><span class="tag">&lt;dependency&gt;</span>
     <span class="tag">&lt;groupId&gt;</span>org.jboss.resteasy<span class="tag">&lt;/groupId&gt;</span>
     <span class="tag">&lt;artifactId&gt;</span>resteasy-servlet-initializer<span class="tag">&lt;/artifactId&gt;</span>
-    <span class="tag">&lt;version&gt;</span>7.0.3.Final<span class="tag">&lt;/version&gt;</span>
+    <span class="tag">&lt;version&gt;</span>7.0.4.Final<span class="tag">&lt;/version&gt;</span>
 <span class="tag">&lt;/dependency&gt;</span></code></pre>
 </div>
 </div>
@@ -2144,7 +2145,7 @@ resteasy-core and resteasy-client. You can access them by way of maven:</p>
 <pre class="CodeRay highlight"><code data-lang="xml"><span class="tag">&lt;dependency&gt;</span>
     <span class="tag">&lt;groupId&gt;</span>org.jboss.resteasy<span class="tag">&lt;/groupId&gt;</span>
     <span class="tag">&lt;artifactId&gt;</span>resteasy-client<span class="tag">&lt;/artifactId&gt;</span>
-    <span class="tag">&lt;version&gt;</span>7.0.3.Final<span class="tag">&lt;/version&gt;</span>
+    <span class="tag">&lt;version&gt;</span>7.0.4.Final<span class="tag">&lt;/version&gt;</span>
 <span class="tag">&lt;/dependency&gt;</span></code></pre>
 </div>
 </div>
@@ -2665,7 +2666,7 @@ For example, you can have Atom links for the root response entity, and also for 
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">org.jboss.resteasy</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">resteasy-links</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">7.0.3.Final</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">7.0.4.Final</p></td>
 </tr>
 </tbody>
 </table>
@@ -4428,6 +4429,32 @@ For example, the document</p>
 <p>could cause the passwd file to be loaded.</p>
 </div>
 <div class="paragraph">
+<p>Similarly, RESTEasy&#8217;s built-in provider for <code>javax.xml.transform.Source</code> (used when resource methods accept or return
+<code>Source</code> objects) applies XXE protections when writing <code>StreamSource</code> instances. The <code>StreamSource</code> is wrapped with a
+securely configured <code>XMLReader</code> that disables external entity resolution by default. The <code>TransformerFactory</code> used for
+serialization is also configured with secure processing enabled.</p>
+</div>
+<div class="paragraph">
+<p>These protections are controlled by the same configuration parameters described below
+(<code>resteasy.document.expand.entity.references</code>, <code>resteasy.document.secure.processing.feature</code>, and
+<code>resteasy.document.secure.disableDTDs</code>). Setting these parameters to allow entity expansion or disable secure
+processing will weaken the XXE protections for <code>Source</code> types as well.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+If a custom <code>MessageBodyReader</code> produces a non-<code>StreamSource</code> type (e.g. <code>SAXSource</code>), the application is
+responsible for ensuring the source is securely configured. RESTEasy only applies XXE hardening to <code>StreamSource</code>
+instances produced by its built-in reader.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
 <p>By default, RESTEasy&#8217;s built-in unmarshaller for <code>org.w3c.dom.Document</code> documents will not expand external entities, replacing them by the empty string instead.
 It can be configured to replace external entities by values defined in the DTD by setting the parameter
 <code>resteasy.document.expand.entity.references</code> to "true". If configured in the <code>web.xml</code> file, it would be:</p>
@@ -5627,6 +5654,20 @@ Here is an example of an input atom document and extracting a Customer object fr
 <div class="sect1">
 <h2 id="_json"><a class="anchor" href="#_json"></a>24. JSON Support via Jackson</h2>
 <div class="sectionbody">
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+This chapter documents the <code>resteasy-jackson2-provider</code> for Jackson 2. For Jackson 3 support, see the
+standalone <a href="https://docs.resteasy.dev/resteasy-jackson-provider">RESTEasy Jackson Provider</a> project
+(<code>dev.resteasy.providers:resteasy-jackson-provider</code>).
+</td>
+</tr>
+</table>
+</div>
 <div class="paragraph">
 <p>RESTEasy supports integration with the Jackson project.
 For more on Jackson 2, see <a href="https://github.com/FasterXML/jackson-databind/wiki" class="bare">https://github.com/FasterXML/jackson-databind/wiki</a>.
@@ -5659,7 +5700,7 @@ a <code>jakarta.ws.rs.ext.ContextResolver</code> for the <code>ObjectMapper</cod
 <pre class="CodeRay highlight"><code data-lang="xml"><span class="tag">&lt;dependency&gt;</span>
    <span class="tag">&lt;groupId&gt;</span>org.jboss.resteasy<span class="tag">&lt;/groupId&gt;</span>
    <span class="tag">&lt;artifactId&gt;</span>resteasy-jackson2-provider<span class="tag">&lt;/artifactId&gt;</span>
-   <span class="tag">&lt;version&gt;</span>7.0.3.Final<span class="tag">&lt;/version&gt;</span>
+   <span class="tag">&lt;version&gt;</span>7.0.4.Final<span class="tag">&lt;/version&gt;</span>
 <span class="tag">&lt;/dependency&gt;</span></code></pre>
 </div>
 </div>
@@ -5974,7 +6015,7 @@ RESTEasy&#8217;s provider is provided by default in WildFly. If using another se
 <pre class="CodeRay highlight"><code data-lang="xml"><span class="tag">&lt;dependency&gt;</span>
    <span class="tag">&lt;groupId&gt;</span>org.jboss.resteasy<span class="tag">&lt;/groupId&gt;</span>
    <span class="tag">&lt;artifactId&gt;</span>resteasy-json-p-provider<span class="tag">&lt;/artifactId&gt;</span>
-   <span class="tag">&lt;version&gt;</span>7.0.3.Final<span class="tag">&lt;/version&gt;</span>
+   <span class="tag">&lt;version&gt;</span>7.0.4.Final<span class="tag">&lt;/version&gt;</span>
 <span class="tag">&lt;/dependency&gt;</span></code></pre>
 </div>
 </div>
@@ -7165,7 +7206,7 @@ For example, add the RESTEasy Jackson2 Provider into the project&#8217;s depende
 <pre class="CodeRay highlight"><code data-lang="xml"><span class="tag">&lt;dependency&gt;</span>
     <span class="tag">&lt;groupId&gt;</span>org.jboss.resteasy<span class="tag">&lt;/groupId&gt;</span>
     <span class="tag">&lt;artifactId&gt;</span>resteasy-jackson2-provider<span class="tag">&lt;/artifactId&gt;</span>
-    <span class="tag">&lt;version&gt;</span>7.0.3.Final<span class="tag">&lt;/version&gt;</span>
+    <span class="tag">&lt;version&gt;</span>7.0.4.Final<span class="tag">&lt;/version&gt;</span>
 <span class="tag">&lt;/dependency&gt;</span></code></pre>
 </div>
 </div>
@@ -11572,7 +11613,7 @@ The <code>HttpContext</code> attributes are available by injecting an <code>org.
 <pre class="CodeRay highlight"><code data-lang="xml"><span class="tag">&lt;dependency&gt;</span>
     <span class="tag">&lt;groupId&gt;</span>org.jboss.resteasy<span class="tag">&lt;/groupId&gt;</span>
     <span class="tag">&lt;artifactId&gt;</span>resteasy-jdk-http<span class="tag">&lt;/artifactId&gt;</span>
-    <span class="tag">&lt;version&gt;</span>7.0.3.Final<span class="tag">&lt;/version&gt;</span>
+    <span class="tag">&lt;version&gt;</span>7.0.4.Final<span class="tag">&lt;/version&gt;</span>
 <span class="tag">&lt;/dependency&gt;</span></code></pre>
 </div>
 </div>
@@ -11685,112 +11726,25 @@ The packages have remained the same, but the Maven GAV has changed:</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_vert_x"><a class="anchor" href="#_vert_x"></a>43.5. Vert.x</h3>
+<h3 id="_jetty"><a class="anchor" href="#_jetty"></a>43.5. Jetty</h3>
 <div class="paragraph">
-<p>RESTEasy has integration with the popular Vert.x project.</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="java"><span class="directive">public</span> <span class="directive">static</span> <span class="type">void</span> start(VertxResteasyDeployment deployment) <span class="directive">throws</span> <span class="exception">Exception</span> {
-    VertxJaxrsServer server = <span class="keyword">new</span> VertxJaxrsServer();
-    server.setDeployment(deployment);
-    server.setPort(TestPortProvider.getPort());
-    server.setRootResourcePath(<span class="string"><span class="delimiter">&quot;</span><span class="delimiter">&quot;</span></span>);
-    server.setSecurityDomain(<span class="predefined-constant">null</span>);
-    server.start();
-}</code></pre>
-</div>
+<p>RESTEasy provides an embedded server implementation backed by Eclipse Jetty.</p>
 </div>
 <div class="paragraph">
-<p>Include this archive to use the Vertx feature</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="xml"><span class="tag">&lt;dependency&gt;</span>
-    <span class="tag">&lt;groupId&gt;</span>dev.resteasy.vertx<span class="tag">&lt;/groupId&gt;</span>
-    <span class="tag">&lt;artifactId&gt;</span>resteasy-vertx-embedded-server<span class="tag">&lt;/artifactId&gt;</span>
-<span class="tag">&lt;/dependency&gt;</span></code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>The server will bootstrap its own Vert.x instance and Http server.</p>
-</div>
-<div class="paragraph">
-<p>When a resource is called, it is done with the Vert.x Event Loop thread, keep in mind not block this thread and respect the Vert.x programming model, see the related Vert.x <a href="http://vertx.io/docs/vertx-core/java/#_don_t_block_me">manual page</a>.</p>
-</div>
-<div class="paragraph">
-<p>Vert.x extends the RESTEasy registry to  provide a new binding scope that creates resources per Event Loop:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="java">VertxResteasyDeployment deployment = <span class="keyword">new</span> VertxResteasyDeployment();
-<span class="comment">// Create an instance of resource per Event Loop</span>
-deployment.getRegistry().addPerInstanceResource(Resource.class);</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>The per instance binding scope caches the same resource instance for each event loop providing the same concurrency model than a verticle deployed multiple times.</p>
-</div>
-<div class="paragraph">
-<p>Vert.x can also embed a RESTEasy deployment, making it easy to use Jakarta RESTful Web Services annotated controller in Vert.x applications:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="java"><span class="directive">public</span> <span class="directive">static</span> <span class="type">void</span> main(<span class="directive">final</span> <span class="predefined-type">String</span><span class="type">[]</span> args) <span class="directive">throws</span> <span class="exception">Exception</span> {
-    Vertx vertx = Vertx.vertx();
-    HttpServer server = vertx.createHttpServer();
-
-    <span class="comment">// Set an handler calling Resteasy</span>
-    server.requestHandler(<span class="keyword">new</span> VertxRequestHandler(vertx, deployment));
-
-    <span class="comment">// Start the server</span>
-    server.listen(<span class="integer">8080</span>, <span class="string"><span class="delimiter">&quot;</span><span class="content">localhost</span><span class="delimiter">&quot;</span></span>);
-}</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>Vert.x objects can be injected in annotated resources:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="java"><span class="annotation">@GET</span>
-<span class="annotation">@Path</span>(<span class="string"><span class="delimiter">&quot;</span><span class="content">/somepath</span><span class="delimiter">&quot;</span></span>)
-<span class="annotation">@Produces</span>(<span class="string"><span class="delimiter">&quot;</span><span class="content">text/plain</span><span class="delimiter">&quot;</span></span>)
-<span class="directive">public</span> <span class="predefined-type">String</span> context(
-        <span class="annotation">@Context</span> io.vertx.core.Context context,
-        <span class="annotation">@Context</span> io.vertx.core.Vertx vertx,
-        <span class="annotation">@Context</span> io.vertx.core.http.HttpServerRequest req,
-        <span class="annotation">@Context</span> io.vertx.core.http.HttpServerResponse resp) {
-    <span class="keyword">return</span> <span class="string"><span class="delimiter">&quot;</span><span class="content">the-response</span><span class="delimiter">&quot;</span></span>;
-}</code></pre>
-</div>
-</div>
-<div class="admonitionblock important">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-important" title="Important"></i>
-</td>
-<td class="content">
-<div class="paragraph">
-<p>The Vert.x embedded has moved to its own project which can be found at <a href="https://github.com/resteasy/resteasy-vertx" class="bare">https://github.com/resteasy/resteasy-vertx</a>.
-The packages have remained the same, but the Maven GAV has changed:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="xml"><span class="tag">&lt;dependency&gt;</span>
-    <span class="tag">&lt;groupId&gt;</span>dev.resteasy.vertx<span class="tag">&lt;/groupId&gt;</span>
-    <span class="tag">&lt;artifactId&gt;</span>resteasy-vertx-embedded-server<span class="tag">&lt;/artifactId&gt;</span>
-<span class="tag">&lt;/dependency&gt;</span></code></pre>
-</div>
-</div>
-</td>
-</tr>
-</table>
+<p>For RESTEasy Jetty embedded server documentation, see <a href="https://docs.resteasy.dev/resteasy-jetty">docs.resteasy.dev/resteasy-jetty</a>.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_embeddedjaxrsserver"><a class="anchor" href="#_embeddedjaxrsserver"></a>43.6. EmbeddedJaxrsServer</h3>
+<h3 id="_vert_x"><a class="anchor" href="#_vert_x"></a>43.6. Vert.x</h3>
+<div class="paragraph">
+<p>RESTEasy provides an embedded server implementation backed by Eclipse Vert.x.</p>
+</div>
+<div class="paragraph">
+<p>For RESTEasy Vert.x embedded server documentation, see <a href="https://docs.resteasy.dev/resteasy-vertx">docs.resteasy.dev/resteasy-vertx</a>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_embeddedjaxrsserver"><a class="anchor" href="#_embeddedjaxrsserver"></a>43.7. EmbeddedJaxrsServer</h3>
 <div class="paragraph">
 <p><code>EmbeddedJaxrsServer</code> is a deprecated interface provided to enable each embedded container wrapper class to configure, start and stop its container in a standard fashion.
 Each server <code>UndertowJaxrsServer</code>, <code>SunHttpJaxrsServer</code>, <code>NettyJaxrsServer</code>, and <code>VertxJaxrsServer</code> implements <code>EmbeddedJaxrsServer</code>.</p>
@@ -12188,7 +12142,7 @@ It also allows the user to plug in their own mechanism to discover keys.</p>
 <pre class="CodeRay highlight"><code data-lang="xml"><span class="tag">&lt;dependency&gt;</span>
     <span class="tag">&lt;groupId&gt;</span>org.jboss.resteasy<span class="tag">&lt;/groupId&gt;</span>
     <span class="tag">&lt;artifactId&gt;</span>resteasy-crypto<span class="tag">&lt;/artifactId&gt;</span>
-    <span class="tag">&lt;version&gt;</span>7.0.3.Final<span class="tag">&lt;/version&gt;</span>
+    <span class="tag">&lt;version&gt;</span>7.0.4.Final<span class="tag">&lt;/version&gt;</span>
 <span class="tag">&lt;/dependency&gt;</span></code></pre>
 </div>
 </div>
@@ -12616,7 +12570,7 @@ RESTEasy allows you to easily encrypt and/or sign an email message using the S/M
 <pre class="CodeRay highlight"><code data-lang="xml"><span class="tag">&lt;dependency&gt;</span>
     <span class="tag">&lt;groupId&gt;</span>org.jboss.resteasy<span class="tag">&lt;/groupId&gt;</span>
     <span class="tag">&lt;artifactId&gt;</span>resteasy-crypto<span class="tag">&lt;/artifactId&gt;</span>
-    <span class="tag">&lt;version&gt;</span>7.0.3.Final<span class="tag">&lt;/version&gt;</span>
+    <span class="tag">&lt;version&gt;</span>7.0.4.Final<span class="tag">&lt;/version&gt;</span>
 <span class="tag">&lt;/dependency&gt;</span></code></pre>
 </div>
 </div>
@@ -13467,12 +13421,12 @@ The Spring context configuration data is used to wire Spring into Undertow.</p>
 <pre class="CodeRay highlight"><code data-lang="xml"><span class="tag">&lt;dependency&gt;</span>
   <span class="tag">&lt;groupId&gt;</span>org.jboss.resteasy<span class="tag">&lt;/groupId&gt;</span>
   <span class="tag">&lt;artifactId&gt;</span>resteasy-undertow<span class="tag">&lt;/artifactId&gt;</span>
-  <span class="tag">&lt;version&gt;</span>7.0.3.Final<span class="tag">&lt;/version&gt;</span>
+  <span class="tag">&lt;version&gt;</span>7.0.4.Final<span class="tag">&lt;/version&gt;</span>
 <span class="tag">&lt;/dependency&gt;</span>
 <span class="tag">&lt;dependency&gt;</span>
   <span class="tag">&lt;groupId&gt;</span>org.jboss.resteasy<span class="tag">&lt;/groupId&gt;</span>
   <span class="tag">&lt;artifactId&gt;</span>resteasy-undertow-spring<span class="tag">&lt;/artifactId&gt;</span>
-  <span class="tag">&lt;version&gt;</span>7.0.3.Final<span class="tag">&lt;/version&gt;</span>
+  <span class="tag">&lt;version&gt;</span>7.0.4.Final<span class="tag">&lt;/version&gt;</span>
 <span class="tag">&lt;/dependency&gt;</span></code></pre>
 </div>
 </div>
@@ -14592,19 +14546,6 @@ RESTEasy ships with multiple implementations of this interface.</p>
 <div class="paragraph">
 <p><code>JettyClientEngine</code> is built on top of <em>Eclipse Jetty</em> HTTP engine, which is possibly an interesting option for those already running on the Jetty server.</p>
 </div>
-<div class="admonitionblock important">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-important" title="Important"></i>
-</td>
-<td class="content">
-This project has moved to a new repository <a href="https://github.com/resteasy/resteasy-jetty" class="bare">https://github.com/resteasy/resteasy-jetty</a>. The dependency GAV and
-           package names have changed, but it should still operate the same.
-</td>
-</tr>
-</table>
-</div>
 <div class="paragraph">
 <p><code>VertxClientHttpEngine</code> is built on top of <em>Eclipse Vert.x</em>, which provides a non-blocking HTTP client based on Vert.x framework.</p>
 </div>
@@ -15066,105 +15007,20 @@ When using InvocationCallbacks, the response is always fully buffered in memory.
 </div>
 <div class="sect3">
 <h4 id="_jetty_client"><a class="anchor" href="#_jetty_client"></a>54.3.6. Jetty Client Engine</h4>
-<div class="admonitionblock important">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-important" title="Important"></i>
-</td>
-<td class="content">
-This project has moved to a new repository <a href="https://github.com/resteasy/resteasy-jetty" class="bare">https://github.com/resteasy/resteasy-jetty</a>. The dependency GAV and
-package names have changed, but it should still operate the same.
-</td>
-</tr>
-</table>
+<div class="paragraph">
+<p>RESTEasy provides an Eclipse Jetty-backed HTTP client engine with support for HTTP/1.1, HTTP/2, SSL/TLS, and asynchronous invocations.</p>
 </div>
 <div class="paragraph">
-<p>As a drop in replacement, RESTEasy allows selecting a Jetty 12 based HTTP engine.
-The Jetty implementation is newer and less tested, but it may end up being a good choice when relying on Jetty as server side already.
-The Jetty Server can even share execution resources with Client libraries if configured to use e.g.
-the same QueuedThreadPool.</p>
-</div>
-<div class="paragraph">
-<p>The Jetty engine is enabled by adding a dependency to the <code>dev.resteasy.jetty:resteasy-client-jetty</code> artifact to your runtime environment.</p>
+<p>For RESTEasy Jetty documentation, see <a href="https://docs.resteasy.dev/resteasy-jetty">docs.resteasy.dev/resteasy-jetty</a>.</p>
 </div>
 </div>
 <div class="sect3">
 <h4 id="_vertx_client"><a class="anchor" href="#_vertx_client"></a>54.3.7. Vertx Client Engine</h4>
 <div class="paragraph">
-<p>Still as a drop in replacement, RESTEasy allows selecting a Vert.x-based HTTP engine.
-The Vert.x implementation can perform asynchronous client invocations.
-It provides the following features:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>HTTP/1.1</p>
-</li>
-<li>
-<p>HTTP/2</p>
-</li>
-<li>
-<p>SSL/TLS (including native SSL engine)</p>
-</li>
-<li>
-<p>Efficient client connection pooling</p>
-</li>
-<li>
-<p>Optional native IO on Linux and BSD for greater performance</p>
-</li>
-<li>
-<p>Domain sockets</p>
-</li>
-<li>
-<p>HTTP Metrics with Dropwizard or Micrometer</p>
-</li>
-</ul>
+<p>RESTEasy provides a Vert.x-backed HTTP client engine with support for HTTP/1.1, HTTP/2, SSL/TLS, and asynchronous invocations.</p>
 </div>
 <div class="paragraph">
-<p>The Vert.x engine is enabled by adding a dependency to the <code>org.jboss.resteasy:resteasy-client-vertx</code> artifact to your runtime environment.</p>
-</div>
-<div class="paragraph">
-<p>A Vert.x instance can also be provided when creating the client engine, as well as options configuration:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="java"><span class="directive">public</span> HttpEngine createVertxEngine() {
-  HttpClientOptions options = <span class="keyword">new</span> HttpClientOptions()
-   .setSsl(<span class="predefined-constant">true</span>)
-   .setTrustStoreOptions(<span class="keyword">new</span> JksOptions()
-     .setPath(<span class="string"><span class="delimiter">&quot;</span><span class="content">/path/to/your/truststore.jks</span><span class="delimiter">&quot;</span></span>)
-     .setPassword(<span class="string"><span class="delimiter">&quot;</span><span class="content">password-of-your-truststore</span><span class="delimiter">&quot;</span></span>)
-  );
-  <span class="keyword">return</span> <span class="keyword">new</span> VertxClientHttpEngine(vertx, options);
-}</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>You can read more about HttpClient configuration <a href="https://vertx.io/docs/vertx-core/java/#_making_requests">here</a>.</p>
-</div>
-<div class="admonitionblock important">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-important" title="Important"></i>
-</td>
-<td class="content">
-<div class="paragraph">
-<p>The Vert.x client has moved to its own project which can be found at <a href="https://github.com/resteasy/resteasy-vertx" class="bare">https://github.com/resteasy/resteasy-vertx</a>.
-The packages have remained the same, but the Maven GAV has changed:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="xml"><span class="tag">&lt;dependency&gt;</span>
-    <span class="tag">&lt;groupId&gt;</span>dev.resteasy.vertx<span class="tag">&lt;/groupId&gt;</span>
-    <span class="tag">&lt;artifactId&gt;</span>resteasy-vertx-client<span class="tag">&lt;/artifactId&gt;</span>
-<span class="tag">&lt;/dependency&gt;</span></code></pre>
-</div>
-</div>
-</td>
-</tr>
-</table>
+<p>For RESTEasy Vert.x client documentation, see <a href="https://docs.resteasy.dev/resteasy-vertx">docs.resteasy.dev/resteasy-vertx</a>.</p>
 </div>
 </div>
 <div class="sect3">
@@ -16932,17 +16788,17 @@ To use RESTEasy Undertow Container together with WADL support, add these three c
     <span class="tag">&lt;dependency&gt;</span>
         <span class="tag">&lt;groupId&gt;</span>org.jboss.resteasy<span class="tag">&lt;/groupId&gt;</span>
         <span class="tag">&lt;artifactId&gt;</span>resteasy-wadl<span class="tag">&lt;/artifactId&gt;</span>
-        <span class="tag">&lt;version&gt;</span>7.0.3.Final<span class="tag">&lt;/version&gt;</span>
+        <span class="tag">&lt;version&gt;</span>7.0.4.Final<span class="tag">&lt;/version&gt;</span>
     <span class="tag">&lt;/dependency&gt;</span>
     <span class="tag">&lt;dependency&gt;</span>
         <span class="tag">&lt;groupId&gt;</span>org.jboss.resteasy<span class="tag">&lt;/groupId&gt;</span>
         <span class="tag">&lt;artifactId&gt;</span>resteasy-wadl-undertow-connector<span class="tag">&lt;/artifactId&gt;</span>
-        <span class="tag">&lt;version&gt;</span>7.0.3.Final<span class="tag">&lt;/version&gt;</span>
+        <span class="tag">&lt;version&gt;</span>7.0.4.Final<span class="tag">&lt;/version&gt;</span>
     <span class="tag">&lt;/dependency&gt;</span>
     <span class="tag">&lt;dependency&gt;</span>
         <span class="tag">&lt;groupId&gt;</span>org.jboss.resteasy<span class="tag">&lt;/groupId&gt;</span>
         <span class="tag">&lt;artifactId&gt;</span>resteasy-undertow<span class="tag">&lt;/artifactId&gt;</span>
-        <span class="tag">&lt;version&gt;</span>7.0.3.Final<span class="tag">&lt;/version&gt;</span>
+        <span class="tag">&lt;version&gt;</span>7.0.4.Final<span class="tag">&lt;/version&gt;</span>
     <span class="tag">&lt;/dependency&gt;</span>
 <span class="tag">&lt;/dependencies&gt;</span></code></pre>
 </div>
@@ -17069,7 +16925,7 @@ To enable the tracing feature, add the following dependency in your project:</p>
 <pre class="CodeRay highlight"><code data-lang="xml"><span class="tag">&lt;dependency&gt;</span>
     <span class="tag">&lt;groupId&gt;</span>org.jboss.resteasy<span class="tag">&lt;/groupId&gt;</span>
     <span class="tag">&lt;artifactId&gt;</span>resteasy-tracing-api<span class="tag">&lt;/artifactId&gt;</span>
-    <span class="tag">&lt;version&gt;</span>7.0.3.Final<span class="tag">&lt;/version&gt;</span>
+    <span class="tag">&lt;version&gt;</span>7.0.4.Final<span class="tag">&lt;/version&gt;</span>
 <span class="tag">&lt;/dependency&gt;</span></code></pre>
 </div>
 </div>
@@ -17231,7 +17087,7 @@ The first choice is to use the jackson2 provider:</p>
 <pre class="CodeRay highlight"><code data-lang="xml"><span class="tag">&lt;dependency&gt;</span>
     <span class="tag">&lt;groupId&gt;</span>org.jboss.resteasy<span class="tag">&lt;/groupId&gt;</span>
     <span class="tag">&lt;artifactId&gt;</span>resteasy-jackson2-provider<span class="tag">&lt;/artifactId&gt;</span>
-    <span class="tag">&lt;version&gt;</span>7.0.3.Final<span class="tag">&lt;/version&gt;</span>
+    <span class="tag">&lt;version&gt;</span>7.0.4.Final<span class="tag">&lt;/version&gt;</span>
 <span class="tag">&lt;/dependency&gt;</span></code></pre>
 </div>
 </div>
@@ -17243,7 +17099,7 @@ The first choice is to use the jackson2 provider:</p>
 <pre class="CodeRay highlight"><code data-lang="xml"><span class="tag">&lt;dependency&gt;</span>
     <span class="tag">&lt;groupId&gt;</span>org.jboss.resteasy<span class="tag">&lt;/groupId&gt;</span>
     <span class="tag">&lt;artifactId&gt;</span>resteasy-json-binding-provider<span class="tag">&lt;/artifactId&gt;</span>
-    <span class="tag">&lt;version&gt;</span>7.0.3.Final<span class="tag">&lt;/version&gt;</span>
+    <span class="tag">&lt;version&gt;</span>7.0.4.Final<span class="tag">&lt;/version&gt;</span>
 <span class="tag">&lt;/dependency&gt;</span></code></pre>
 </div>
 </div>
@@ -18245,7 +18101,7 @@ Note that Maven version 3.9.0 or higher is required to process BOM files.</p>
         <span class="tag">&lt;dependency&gt;</span>
             <span class="tag">&lt;groupId&gt;</span>org.jboss.resteasy<span class="tag">&lt;/groupId&gt;</span>
             <span class="tag">&lt;artifactId&gt;</span>resteasy-bom<span class="tag">&lt;/artifactId&gt;</span>
-            <span class="tag">&lt;version&gt;</span>7.0.3.Final<span class="tag">&lt;/version&gt;</span>
+            <span class="tag">&lt;version&gt;</span>7.0.4.Final<span class="tag">&lt;/version&gt;</span>
             <span class="tag">&lt;type&gt;</span>pom<span class="tag">&lt;/type&gt;</span>
             <span class="tag">&lt;scope&gt;</span>import<span class="tag">&lt;/scope&gt;</span>
         <span class="tag">&lt;/dependency&gt;</span>
@@ -18275,7 +18131,7 @@ Note that Maven version 3.9.0 or higher is required to process BOM files.</p>
     <span class="tag">&lt;dependency&gt;</span>
         <span class="tag">&lt;groupId&gt;</span>org.jboss.resteasy<span class="tag">&lt;/groupId&gt;</span>
         <span class="tag">&lt;artifactId&gt;</span>resteasy-client<span class="tag">&lt;/artifactId&gt;</span>
-        <span class="tag">&lt;version&gt;</span>7.0.3.Final<span class="tag">&lt;version&gt;</span>
+        <span class="tag">&lt;version&gt;</span>7.0.4.Final<span class="tag">&lt;version&gt;</span>
     <span class="tag">&lt;/dependency&gt;</span>
 <span class="tag">&lt;/dependencies&gt;</span></code></pre>
 </div>
@@ -18715,8 +18571,8 @@ ResteayClientBuilder builder = (ResteasyClientBuilder)ClientBuilder.newBuilder()
 </div>
 <div id="footer">
 <div id="footer-text">
-Version 7.0.3.Final<br>
-Last updated 2026-08-03 17:44:15 -0700
+Version 7.0.4.Final<br>
+Last updated 2026-09-01 10:45:07 -0700
 </div>
 </div>
 </body>
