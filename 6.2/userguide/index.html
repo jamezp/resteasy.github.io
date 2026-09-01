@@ -529,8 +529,8 @@ table.CodeRay td.code{padding:0 0 0 .75em}
 <div id="header">
 <h1><span class="image"><img src="images/resteasy_logo_200x.png" alt="RESTEasy"></span></h1>
 <div class="details">
-<span id="revnumber">version 6.2.17.Final,</span>
-<span id="revdate">2026-08-03</span>
+<span id="revnumber">version 6.2.18.Final,</span>
+<span id="revdate">2026-09-01</span>
 </div>
 <div id="toc" class="toc2">
 <div id="toctitle">Table of Contents</div>
@@ -876,7 +876,7 @@ table.CodeRay td.code{padding:0 0 0 .75em}
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-This version, 6.2.17.Final, of RESTEasy supports <a href="https://jakarta.ee/specifications/restful-ws/3.1/jakarta-restful-ws-spec-3.1" target="_blank" rel="noopener">Jakarta RESTful Web Services 3.1</a>.
+This version, 6.2.18.Final, of RESTEasy supports <a href="https://jakarta.ee/specifications/restful-ws/3.1/jakarta-restful-ws-spec-3.1" target="_blank" rel="noopener">Jakarta RESTful Web Services 3.1</a>.
 </td>
 </tr>
 </table>
@@ -1280,17 +1280,17 @@ We strongly suggest that you use Maven to build your WAR files as RESTEasy is sp
 <pre class="CodeRay highlight"><code data-lang="xml"><span class="tag">&lt;dependency&gt;</span>
     <span class="tag">&lt;groupId&gt;</span>org.jboss.resteasy<span class="tag">&lt;/groupId&gt;</span>
     <span class="tag">&lt;artifactId&gt;</span>resteasy-core<span class="tag">&lt;/artifactId&gt;</span>
-    <span class="tag">&lt;version&gt;</span>6.2.17.Final<span class="tag">&lt;/version&gt;</span>
+    <span class="tag">&lt;version&gt;</span>6.2.18.Final<span class="tag">&lt;/version&gt;</span>
 <span class="tag">&lt;/dependency&gt;</span>
 <span class="tag">&lt;dependency&gt;</span>
     <span class="tag">&lt;groupId&gt;</span>org.jboss.resteasy<span class="tag">&lt;/groupId&gt;</span>
     <span class="tag">&lt;artifactId&gt;</span>resteasy-client<span class="tag">&lt;/artifactId&gt;</span>
-    <span class="tag">&lt;version&gt;</span>6.2.17.Final<span class="tag">&lt;/version&gt;</span>
+    <span class="tag">&lt;version&gt;</span>6.2.18.Final<span class="tag">&lt;/version&gt;</span>
 <span class="tag">&lt;/dependency&gt;</span>
 <span class="tag">&lt;dependency&gt;</span>
     <span class="tag">&lt;groupId&gt;</span>org.jboss.resteasy<span class="tag">&lt;/groupId&gt;</span>
     <span class="tag">&lt;artifactId&gt;</span>resteasy-jaxb-provider<span class="tag">&lt;/artifactId&gt;</span>
-    <span class="tag">&lt;version&gt;</span>6.2.17.Final<span class="tag">&lt;/version&gt;</span>
+    <span class="tag">&lt;version&gt;</span>6.2.18.Final<span class="tag">&lt;/version&gt;</span>
 <span class="tag">&lt;/dependency&gt;</span></code></pre>
 </div>
 </div>
@@ -1299,7 +1299,7 @@ We strongly suggest that you use Maven to build your WAR files as RESTEasy is sp
 </div>
 <div class="paragraph">
 <p>If not using Maven, include the necessary jars by hand.
-If downloading RESTEasy (from <a href="https://resteasy.dev/downloads.html" class="bare">https://resteasy.dev/downloads.html</a>, for example) you will get a file, resteasy-6.2.17.Final-all.zip.
+If downloading RESTEasy (from <a href="https://resteasy.dev/downloads.html" class="bare">https://resteasy.dev/downloads.html</a>, for example) you will get a file, resteasy-6.2.18.Final-all.zip.
 Unzip the file. The resulting directory will contain a lib/ directory that contains the libraries needed by RESTEasy.
 Copy these, as needed, into your /WEB-INF/lib directory.
 Place your Jakarta RESTful Web Services annotated class resources and providers within one or more jars within /WEB-INF/lib or your raw class files within /WEB-INF/classes.</p>
@@ -1319,7 +1319,7 @@ Add this artifact dependency to your project&#8217;s pom.xml file so the JAR fil
 <pre class="CodeRay highlight"><code data-lang="xml"><span class="tag">&lt;dependency&gt;</span>
     <span class="tag">&lt;groupId&gt;</span>org.jboss.resteasy<span class="tag">&lt;/groupId&gt;</span>
     <span class="tag">&lt;artifactId&gt;</span>resteasy-servlet-initializer<span class="tag">&lt;/artifactId&gt;</span>
-    <span class="tag">&lt;version&gt;</span>6.2.17.Final<span class="tag">&lt;/version&gt;</span>
+    <span class="tag">&lt;version&gt;</span>6.2.18.Final<span class="tag">&lt;/version&gt;</span>
 <span class="tag">&lt;/dependency&gt;</span></code></pre>
 </div>
 </div>
@@ -2130,7 +2130,7 @@ resteasy-core and resteasy-client. You can access them by way of maven:</p>
 <pre class="CodeRay highlight"><code data-lang="xml"><span class="tag">&lt;dependency&gt;</span>
     <span class="tag">&lt;groupId&gt;</span>org.jboss.resteasy<span class="tag">&lt;/groupId&gt;</span>
     <span class="tag">&lt;artifactId&gt;</span>resteasy-client<span class="tag">&lt;/artifactId&gt;</span>
-    <span class="tag">&lt;version&gt;</span>6.2.17.Final<span class="tag">&lt;/version&gt;</span>
+    <span class="tag">&lt;version&gt;</span>6.2.18.Final<span class="tag">&lt;/version&gt;</span>
 <span class="tag">&lt;/dependency&gt;</span></code></pre>
 </div>
 </div>
@@ -2651,7 +2651,7 @@ For example, you can have Atom links for the root response entity, and also for 
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">org.jboss.resteasy</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">resteasy-links</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">6.2.17.Final</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">6.2.18.Final</p></td>
 </tr>
 </tbody>
 </table>
@@ -4414,6 +4414,32 @@ For example, the document</p>
 <p>could cause the passwd file to be loaded.</p>
 </div>
 <div class="paragraph">
+<p>Similarly, RESTEasy&#8217;s built-in provider for <code>javax.xml.transform.Source</code> (used when resource methods accept or return
+<code>Source</code> objects) applies XXE protections when writing <code>StreamSource</code> instances. The <code>StreamSource</code> is wrapped with a
+securely configured <code>XMLReader</code> that disables external entity resolution by default. The <code>TransformerFactory</code> used for
+serialization is also configured with secure processing enabled.</p>
+</div>
+<div class="paragraph">
+<p>These protections are controlled by the same configuration parameters described below
+(<code>resteasy.document.expand.entity.references</code>, <code>resteasy.document.secure.processing.feature</code>, and
+<code>resteasy.document.secure.disableDTDs</code>). Setting these parameters to allow entity expansion or disable secure
+processing will weaken the XXE protections for <code>Source</code> types as well.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+If a custom <code>MessageBodyReader</code> produces a non-<code>StreamSource</code> type (e.g. <code>SAXSource</code>), the application is
+responsible for ensuring the source is securely configured. RESTEasy only applies XXE hardening to <code>StreamSource</code>
+instances produced by its built-in reader.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
 <p>By default, RESTEasy&#8217;s built-in unmarshaller for <code>org.w3c.dom.Document</code> documents will not expand external entities, replacing them by the empty string instead.
 It can be configured to replace external entities by values defined in the DTD by setting the parameter
 <code>resteasy.document.expand.entity.references</code> to "true". If configured in the <code>web.xml</code> file, it would be:</p>
@@ -5510,7 +5536,7 @@ a <code>jakarta.ws.rs.ext.ContextResolver</code> for the <code>ObjectMapper</cod
 <pre class="CodeRay highlight"><code data-lang="xml"><span class="tag">&lt;dependency&gt;</span>
    <span class="tag">&lt;groupId&gt;</span>org.jboss.resteasy<span class="tag">&lt;/groupId&gt;</span>
    <span class="tag">&lt;artifactId&gt;</span>resteasy-jackson2-provider<span class="tag">&lt;/artifactId&gt;</span>
-   <span class="tag">&lt;version&gt;</span>6.2.17.Final<span class="tag">&lt;/version&gt;</span>
+   <span class="tag">&lt;version&gt;</span>6.2.18.Final<span class="tag">&lt;/version&gt;</span>
 <span class="tag">&lt;/dependency&gt;</span></code></pre>
 </div>
 </div>
@@ -5825,7 +5851,7 @@ RESTEasy&#8217;s provider is provided by default in WildFly. If using another se
 <pre class="CodeRay highlight"><code data-lang="xml"><span class="tag">&lt;dependency&gt;</span>
    <span class="tag">&lt;groupId&gt;</span>org.jboss.resteasy<span class="tag">&lt;/groupId&gt;</span>
    <span class="tag">&lt;artifactId&gt;</span>resteasy-json-p-provider<span class="tag">&lt;/artifactId&gt;</span>
-   <span class="tag">&lt;version&gt;</span>6.2.17.Final<span class="tag">&lt;/version&gt;</span>
+   <span class="tag">&lt;version&gt;</span>6.2.18.Final<span class="tag">&lt;/version&gt;</span>
 <span class="tag">&lt;/dependency&gt;</span></code></pre>
 </div>
 </div>
@@ -7016,7 +7042,7 @@ For example, add the RESTEasy Jackson2 Provider into the project&#8217;s depende
 <pre class="CodeRay highlight"><code data-lang="xml"><span class="tag">&lt;dependency&gt;</span>
     <span class="tag">&lt;groupId&gt;</span>org.jboss.resteasy<span class="tag">&lt;/groupId&gt;</span>
     <span class="tag">&lt;artifactId&gt;</span>resteasy-jackson2-provider<span class="tag">&lt;/artifactId&gt;</span>
-    <span class="tag">&lt;version&gt;</span>6.2.17.Final<span class="tag">&lt;/version&gt;</span>
+    <span class="tag">&lt;version&gt;</span>6.2.18.Final<span class="tag">&lt;/version&gt;</span>
 <span class="tag">&lt;/dependency&gt;</span></code></pre>
 </div>
 </div>
@@ -11423,7 +11449,7 @@ The <code>HttpContext</code> attributes are available by injecting an <code>org.
 <pre class="CodeRay highlight"><code data-lang="xml"><span class="tag">&lt;dependency&gt;</span>
     <span class="tag">&lt;groupId&gt;</span>org.jboss.resteasy<span class="tag">&lt;/groupId&gt;</span>
     <span class="tag">&lt;artifactId&gt;</span>resteasy-jdk-http<span class="tag">&lt;/artifactId&gt;</span>
-    <span class="tag">&lt;version&gt;</span>6.2.17.Final<span class="tag">&lt;/version&gt;</span>
+    <span class="tag">&lt;version&gt;</span>6.2.18.Final<span class="tag">&lt;/version&gt;</span>
 <span class="tag">&lt;/dependency&gt;</span></code></pre>
 </div>
 </div>
@@ -12039,7 +12065,7 @@ It also allows the user to plug in their own mechanism to discover keys.</p>
 <pre class="CodeRay highlight"><code data-lang="xml"><span class="tag">&lt;dependency&gt;</span>
     <span class="tag">&lt;groupId&gt;</span>org.jboss.resteasy<span class="tag">&lt;/groupId&gt;</span>
     <span class="tag">&lt;artifactId&gt;</span>resteasy-crypto<span class="tag">&lt;/artifactId&gt;</span>
-    <span class="tag">&lt;version&gt;</span>6.2.17.Final<span class="tag">&lt;/version&gt;</span>
+    <span class="tag">&lt;version&gt;</span>6.2.18.Final<span class="tag">&lt;/version&gt;</span>
 <span class="tag">&lt;/dependency&gt;</span></code></pre>
 </div>
 </div>
@@ -12467,7 +12493,7 @@ RESTEasy allows you to easily encrypt and/or sign an email message using the S/M
 <pre class="CodeRay highlight"><code data-lang="xml"><span class="tag">&lt;dependency&gt;</span>
     <span class="tag">&lt;groupId&gt;</span>org.jboss.resteasy<span class="tag">&lt;/groupId&gt;</span>
     <span class="tag">&lt;artifactId&gt;</span>resteasy-crypto<span class="tag">&lt;/artifactId&gt;</span>
-    <span class="tag">&lt;version&gt;</span>6.2.17.Final<span class="tag">&lt;/version&gt;</span>
+    <span class="tag">&lt;version&gt;</span>6.2.18.Final<span class="tag">&lt;/version&gt;</span>
 <span class="tag">&lt;/dependency&gt;</span></code></pre>
 </div>
 </div>
@@ -13318,12 +13344,12 @@ The Spring context configuration data is used to wire Spring into Undertow.</p>
 <pre class="CodeRay highlight"><code data-lang="xml"><span class="tag">&lt;dependency&gt;</span>
   <span class="tag">&lt;groupId&gt;</span>org.jboss.resteasy<span class="tag">&lt;/groupId&gt;</span>
   <span class="tag">&lt;artifactId&gt;</span>resteasy-undertow<span class="tag">&lt;/artifactId&gt;</span>
-  <span class="tag">&lt;version&gt;</span>6.2.17.Final<span class="tag">&lt;/version&gt;</span>
+  <span class="tag">&lt;version&gt;</span>6.2.18.Final<span class="tag">&lt;/version&gt;</span>
 <span class="tag">&lt;/dependency&gt;</span>
 <span class="tag">&lt;dependency&gt;</span>
   <span class="tag">&lt;groupId&gt;</span>org.jboss.resteasy<span class="tag">&lt;/groupId&gt;</span>
   <span class="tag">&lt;artifactId&gt;</span>resteasy-undertow-spring<span class="tag">&lt;/artifactId&gt;</span>
-  <span class="tag">&lt;version&gt;</span>6.2.17.Final<span class="tag">&lt;/version&gt;</span>
+  <span class="tag">&lt;version&gt;</span>6.2.18.Final<span class="tag">&lt;/version&gt;</span>
 <span class="tag">&lt;/dependency&gt;</span></code></pre>
 </div>
 </div>
@@ -16783,17 +16809,17 @@ To use RESTEasy Undertow Container together with WADL support, add these three c
     <span class="tag">&lt;dependency&gt;</span>
         <span class="tag">&lt;groupId&gt;</span>org.jboss.resteasy<span class="tag">&lt;/groupId&gt;</span>
         <span class="tag">&lt;artifactId&gt;</span>resteasy-wadl<span class="tag">&lt;/artifactId&gt;</span>
-        <span class="tag">&lt;version&gt;</span>6.2.17.Final<span class="tag">&lt;/version&gt;</span>
+        <span class="tag">&lt;version&gt;</span>6.2.18.Final<span class="tag">&lt;/version&gt;</span>
     <span class="tag">&lt;/dependency&gt;</span>
     <span class="tag">&lt;dependency&gt;</span>
         <span class="tag">&lt;groupId&gt;</span>org.jboss.resteasy<span class="tag">&lt;/groupId&gt;</span>
         <span class="tag">&lt;artifactId&gt;</span>resteasy-wadl-undertow-connector<span class="tag">&lt;/artifactId&gt;</span>
-        <span class="tag">&lt;version&gt;</span>6.2.17.Final<span class="tag">&lt;/version&gt;</span>
+        <span class="tag">&lt;version&gt;</span>6.2.18.Final<span class="tag">&lt;/version&gt;</span>
     <span class="tag">&lt;/dependency&gt;</span>
     <span class="tag">&lt;dependency&gt;</span>
         <span class="tag">&lt;groupId&gt;</span>org.jboss.resteasy<span class="tag">&lt;/groupId&gt;</span>
         <span class="tag">&lt;artifactId&gt;</span>resteasy-undertow<span class="tag">&lt;/artifactId&gt;</span>
-        <span class="tag">&lt;version&gt;</span>6.2.17.Final<span class="tag">&lt;/version&gt;</span>
+        <span class="tag">&lt;version&gt;</span>6.2.18.Final<span class="tag">&lt;/version&gt;</span>
     <span class="tag">&lt;/dependency&gt;</span>
 <span class="tag">&lt;/dependencies&gt;</span></code></pre>
 </div>
@@ -16920,7 +16946,7 @@ To enable the tracing feature, add the following dependency in your project:</p>
 <pre class="CodeRay highlight"><code data-lang="xml"><span class="tag">&lt;dependency&gt;</span>
     <span class="tag">&lt;groupId&gt;</span>org.jboss.resteasy<span class="tag">&lt;/groupId&gt;</span>
     <span class="tag">&lt;artifactId&gt;</span>resteasy-tracing-api<span class="tag">&lt;/artifactId&gt;</span>
-    <span class="tag">&lt;version&gt;</span>6.2.17.Final<span class="tag">&lt;/version&gt;</span>
+    <span class="tag">&lt;version&gt;</span>6.2.18.Final<span class="tag">&lt;/version&gt;</span>
 <span class="tag">&lt;/dependency&gt;</span></code></pre>
 </div>
 </div>
@@ -17082,7 +17108,7 @@ The first choice is to use the jackson2 provider:</p>
 <pre class="CodeRay highlight"><code data-lang="xml"><span class="tag">&lt;dependency&gt;</span>
     <span class="tag">&lt;groupId&gt;</span>org.jboss.resteasy<span class="tag">&lt;/groupId&gt;</span>
     <span class="tag">&lt;artifactId&gt;</span>resteasy-jackson2-provider<span class="tag">&lt;/artifactId&gt;</span>
-    <span class="tag">&lt;version&gt;</span>6.2.17.Final<span class="tag">&lt;/version&gt;</span>
+    <span class="tag">&lt;version&gt;</span>6.2.18.Final<span class="tag">&lt;/version&gt;</span>
 <span class="tag">&lt;/dependency&gt;</span></code></pre>
 </div>
 </div>
@@ -17094,7 +17120,7 @@ The first choice is to use the jackson2 provider:</p>
 <pre class="CodeRay highlight"><code data-lang="xml"><span class="tag">&lt;dependency&gt;</span>
     <span class="tag">&lt;groupId&gt;</span>org.jboss.resteasy<span class="tag">&lt;/groupId&gt;</span>
     <span class="tag">&lt;artifactId&gt;</span>resteasy-json-binding-provider<span class="tag">&lt;/artifactId&gt;</span>
-    <span class="tag">&lt;version&gt;</span>6.2.17.Final<span class="tag">&lt;/version&gt;</span>
+    <span class="tag">&lt;version&gt;</span>6.2.18.Final<span class="tag">&lt;/version&gt;</span>
 <span class="tag">&lt;/dependency&gt;</span></code></pre>
 </div>
 </div>
@@ -18096,7 +18122,7 @@ Note that Maven version 3.9.0 or higher is required to process BOM files.</p>
         <span class="tag">&lt;dependency&gt;</span>
             <span class="tag">&lt;groupId&gt;</span>org.jboss.resteasy<span class="tag">&lt;/groupId&gt;</span>
             <span class="tag">&lt;artifactId&gt;</span>resteasy-bom<span class="tag">&lt;/artifactId&gt;</span>
-            <span class="tag">&lt;version&gt;</span>6.2.17.Final<span class="tag">&lt;/version&gt;</span>
+            <span class="tag">&lt;version&gt;</span>6.2.18.Final<span class="tag">&lt;/version&gt;</span>
             <span class="tag">&lt;type&gt;</span>pom<span class="tag">&lt;/type&gt;</span>
             <span class="tag">&lt;scope&gt;</span>import<span class="tag">&lt;/scope&gt;</span>
         <span class="tag">&lt;/dependency&gt;</span>
@@ -18126,7 +18152,7 @@ Note that Maven version 3.9.0 or higher is required to process BOM files.</p>
     <span class="tag">&lt;dependency&gt;</span>
         <span class="tag">&lt;groupId&gt;</span>org.jboss.resteasy<span class="tag">&lt;/groupId&gt;</span>
         <span class="tag">&lt;artifactId&gt;</span>resteasy-client<span class="tag">&lt;/artifactId&gt;</span>
-        <span class="tag">&lt;version&gt;</span>6.2.17.Final<span class="tag">&lt;version&gt;</span>
+        <span class="tag">&lt;version&gt;</span>6.2.18.Final<span class="tag">&lt;version&gt;</span>
     <span class="tag">&lt;/dependency&gt;</span>
 <span class="tag">&lt;/dependencies&gt;</span></code></pre>
 </div>
@@ -18566,8 +18592,8 @@ ResteayClientBuilder builder = (ResteasyClientBuilder)ClientBuilder.newBuilder()
 </div>
 <div id="footer">
 <div id="footer-text">
-Version 6.2.17.Final<br>
-Last updated 2026-08-03 10:32:27 -0700
+Version 6.2.18.Final<br>
+Last updated 2026-09-01 10:21:27 -0700
 </div>
 </div>
 </body>
